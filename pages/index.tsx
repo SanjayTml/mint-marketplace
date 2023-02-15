@@ -13,8 +13,10 @@ interface Props {
 }
 
 export default function Home({ collections, assets }: Props) {
-  const [nftCollections, setNFTCollections] = useState(collections);
-  const [nftAssets, setNFTAssets] = useState(assets);
+  const [nftCollections, setNFTCollections] = useState<
+    [Collection] | null | any
+  >(null);
+  const [nftAssets, setNFTAssets] = useState<[Asset] | any | null>(null);
   const [filter, setFilter] = useState("");
 
   // Fetches all data from collections table in Supabase database
@@ -57,16 +59,16 @@ export default function Home({ collections, assets }: Props) {
     fetchAssets();
   }, []);
 
-  const handleType = (event) => {
-    setFilter(event.target.value);
+  const handleType = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setFilter(event.currentTarget.value);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();
 
     // Get data from the form.
-    const filter = event.target.filter.value;
+    const filter = event.currentTarget.filter.value;
     filterCollection(filter);
   };
 
@@ -121,7 +123,7 @@ export default function Home({ collections, assets }: Props) {
                 <></>
               ) : (
                 <>
-                  {nftCollections?.map((collection) => (
+                  {nftCollections?.map((collection: Collection) => (
                     <CollectionCard {...collection} />
                   ))}
                 </>
@@ -130,7 +132,7 @@ export default function Home({ collections, assets }: Props) {
                 <></>
               ) : (
                 <>
-                  {nftAssets?.map((asset) => (
+                  {nftAssets?.map((asset: Asset) => (
                     <AssetCard {...asset} />
                   ))}
                 </>
@@ -138,9 +140,7 @@ export default function Home({ collections, assets }: Props) {
             </div>
           ) : (
             <div className="mt-10 flex justify-center items-center">
-              <p className="text-2xl">
-                No data obtained from database.
-              </p>
+              <p className="text-2xl">No data obtained from database.</p>
             </div>
           )}
         </section>

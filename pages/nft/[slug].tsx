@@ -91,7 +91,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const relAccount = await supabase
     .from("accounts")
     .select()
-    .eq("id", assets[0].owner_id)
+    .eq("id", assets?.[0].owner_id)
     .single();
 
   const account = relAccount.data;
