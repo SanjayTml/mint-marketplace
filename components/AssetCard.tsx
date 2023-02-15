@@ -3,11 +3,8 @@ import React from "react";
 import { Asset } from "../typing";
 
 function AssetCard(asset: Asset) {
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  const formatDate = new Date(asset.mint_date).toLocaleDateString(
-    undefined,
-    options
-  );
+  
+  const formatDate = new Date(asset.mint_date).toLocaleDateString();
 
   return (
     <Link key={asset.id} href="#">

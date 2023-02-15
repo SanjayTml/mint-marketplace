@@ -14,10 +14,10 @@ This is an example web application that allows visitors to view and search for N
 
 This application uses the following dependencies:
 
-@supabase/supabase-js - A JavaScript client for interacting with Supabase
-next.js - A framework for building server-rendered React applications
-react - A JavaScript library for building user interfaces
-react-dom - A package that provides DOM-specific methods for React
+- `@supabase/supabase-js` - A JavaScript client for interacting with Supabase
+- `next.js` - A framework for building server-rendered React applications
+- `react` - A JavaScript library for building user interfaces
+- `react-dom` - A package that provides DOM-specific methods for React
 
 ## How to configure Supabase
 
