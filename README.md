@@ -1,4 +1,4 @@
-# Mint Marketplace
+# Mint Marketplace (https://mint-marketplace.vercel.app/)
 
 This is an example web application that allows visitors to view and search for NFTs by type, description, properties etc. It is a part of the solution for personal coding challenge provided by [Angry Dynomites Lab](https://www.angrydynomiteslab.com/). This project uses [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js for the frontend and PostgreSQL database for the backend provided by [Supabase](https://supabase.com). 
 
